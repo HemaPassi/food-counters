@@ -7,18 +7,17 @@
   display: block;
 
   .tooltip {
-    width: 100px;
+    width: 150px;
     display: block;
     margin-top: 12px;
+    margin-left: 12px;
     &.show {
       display: block;
-      background-color: pink;
-      border: 2px solid gray;
+      background-color: #90b8e2;
+      border: 1px solid gray;
     }
     &.hide {
       display: none;
-      background-color: green;
-      border: 2px solid blue;
     }
   }
 }

@@ -25,13 +25,11 @@ class FoodTruck extends Component {
   };
 
   componentDidMount = () => {
-    console.log("component did mount ");
     this.props.fetchDataJson();
   };
 
   onFoodTruckClickHandler = (evt, key) => {
     // eslint-disable-next-line default-case
-    console.log("ON FOOD TRUCK CLICK HANDLER key is here " + key);
     switch (key) {
       case "add":
         this.setState({ isForm: true, clickOption: key });
@@ -41,6 +39,9 @@ class FoodTruck extends Component {
         break;
       case "delete":
         this.props.removeFoodTruck(key, evt);
+        break;
+      case "resetSearch":
+        this.props.fetchDataJson({});
         break;
       default:
         break;
@@ -55,9 +56,7 @@ class FoodTruck extends Component {
     });
   };
   onSubmitHandler = (evt, data, isEdit = false) => {
-    console.log("isEdit   ", isEdit);
     this.setState({ isEditFormDisable: true });
-    console.log("isEdit   ", isEdit);
     if (isEdit) {
       this.props.editFoodTruck(data);
     } else {
@@ -92,12 +91,6 @@ class FoodTruck extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(
-    "MAP SATE TO PROPS",
-    typeof state.FoodTruckData,
-    "   state here ",
-    state.FoodTruckData.data
-  );
   return {
     data: state.FoodTruckData.data,
     type: state.FoodTruckData.type,

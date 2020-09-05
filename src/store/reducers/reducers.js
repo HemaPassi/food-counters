@@ -15,10 +15,6 @@ export default function (state = initalState, action) {
       } else return { type: action.payload, data: [] };
 
     case actionTypes.FETCH_DATA_BASE:
-      console.log("reducer  hema ", {
-        type: { key: "add" },
-        data: { ...action.payload },
-      });
       return { type: { key: "add" }, data: [...action.payload] };
 
     case actionTypes.EDIT_FOOD_TRUCK:
@@ -31,9 +27,11 @@ export default function (state = initalState, action) {
       };
 
     case actionTypes.REMOVE_FOOD_TRUCK:
+      console.log("action.payload.title  ", action.payload.title);
       const updatedArray = state.data.filter(
-        (data) => data.title !== action.payload
+        (data) => data.title !== action.payload.title
       );
+      console.log("updatedArray  ", updatedArray);
       return { type: { key: "remove" }, data: [...updatedArray] };
     default:
       return state;

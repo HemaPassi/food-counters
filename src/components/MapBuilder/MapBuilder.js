@@ -12,10 +12,8 @@ const MapBuilder = ({ data, onFoodTruckClickHandler }) => (
     defaultCenter={{ lat: 28.63519, lng: 77.15902 }}
     defaultZoom={15}
   >
-    {console.log(typeof data, " hema  ", data)}
     {data &&
       data.map((details) => {
-        console.log("details  ", details);
         return (
           <MarkerBuilder
             key={details.id}

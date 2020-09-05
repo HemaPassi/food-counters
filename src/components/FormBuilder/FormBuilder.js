@@ -6,6 +6,7 @@ class FormBuilder extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.state.errorText = "";
   }
 
   onChangeHandler = (evt) => {
@@ -16,24 +17,28 @@ class FormBuilder extends Component {
   };
 
   componentDidMount() {
-    // console.log("is edit " + props.isEdit + " data ", props.data);
-    console.log("in form builder  ", this.props.data);
     if (this.props.isEdit) {
       this.setState({ ...this.props.data });
     }
-    console.log("edit componet did mount ", { ...this.props.data });
   }
 
   onSubmitHandler = (evt) => {
     evt.preventDefault();
-    console.log(this.state);
     // this.setState({ id: this.state.title });
-    console.log("on submit FINAL state  ", this.state);
-    this.props.onSubmitHandler(evt, this.state, this.props.isEdit);
+    const { title, latitude, longitude, openingTime, closingTime } = this.state;
+    if (!title || !latitude || !longitude || !openingTime || !closingTime) {
+      this.setState({ errorText: "Please fill all the details" });
+    } else {
+      this.setState({
+        errorText: "Please click on close button, to close this panel",
+      });
+      this.props.onSubmitHandler(evt, this.state, this.props.isEdit);
+    }
   };
 
   onCloseHandler = (evt) => {
     evt.preventDefault();
+    this.setState({ errorText: "" });
     this.props.onCloseHandler("close");
   };
 
@@ -44,60 +49,65 @@ class FormBuilder extends Component {
           <h2>Food Trucks</h2>
           <Input
             type="text"
-            label="Food Counter"
+            label="Food Counter*"
             name="title"
+            required
             value={this.state.title}
-            onChange={(event) => this.onChangeHandler(event, "title")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
             label="Owner Name"
             type="text"
             name="ownerName"
             value={this.state.ownerName}
-            onChange={(event) => this.onChangeHandler(event, "ownerName")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
             type="text"
             label="Address"
             name="address"
             value={this.state.address}
-            onChange={(event) => this.onChangeHandler(event, "address")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
             type="text"
-            label="Latitude"
+            label="Latitude*"
             name="latitude"
             value={this.state.latitude}
-            onChange={(event) => this.onChangeHandler(event, "latitude")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
             type="text"
-            label="Longitude"
+            label="Longitude*"
             name="longitude"
+            required
             value={this.state.longitude}
-            onChange={(event) => this.onChangeHandler(event, "longitude")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
-            label="Opening Time"
+            label="Opening Time*"
             type="text"
             name="openingTime"
+            required
             value={this.state.openingTime}
-            onChange={(event) => this.onChangeHandler(event, "openingTime")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
-            label="Closing Time"
+            label="Closing Time*"
             type="text"
             name="closingTime"
+            required
             value={this.state.closingTime}
-            onChange={(event) => this.onChangeHandler(event, "closingTime")}
+            onChange={this.onChangeHandler.bind(this)}
           />
           <Input
             label="Other Details"
             type="text"
             name="otherDetails"
             value={this.state.otherDetails}
-            onChange={(event) => this.onChangeHandler(event, "otherDetails")}
+            onChange={this.onChangeHandler.bind(this)}
           />
+          <div class="error">{this.state.errorText}</div>
           <button onClick={this.onSubmitHandler}>Submit</button>
           <button onClick={this.onCloseHandler}>Close</button>
         </form>

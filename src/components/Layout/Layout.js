@@ -41,8 +41,6 @@ const Layout = ({
     }
   }, [clickOption, type && type.key]);
 
-  console.log(clickOption, " type key  ", type && type.key);
-
   const onClickHanderTruckList = (data) => {
     setEditFormShown(true);
     setSeletectedData({ ...data });
