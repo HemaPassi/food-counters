@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Chinese food – Block A",
+    "ownerName": "R. K . Singh",
+    "lat": "22.61539",
+    "lng": "77.27725",
+    "openingTime": "7am",
+    "closingTime": "10pm",
+    "otherDetatils": "sunday opened"
+  },
+  {
+    "id": "2",
+    "title": "Chinese food – Block B",
+    "ownerName": "B. L.Garg",
+    "lat": "25.61539",
+    "lng": "77.27725",
+    "openingTime": "7am",
+    "closingTime": "10pm",
+    "otherDetatils": "sunday opened"
+  },
+  {
+    "id": "3",
+    "title": "Chinese food – Block C",
+    "ownerName": "H.L.Sharma",
+    "lat": "26.51539",
+    "lng": "75.17725",
+    "openingTime": "7am",
+    "closingTime": "10pm",
+    "otherDetatils": "sunday closed"
+  },
+  {
+    "id": "4",
+    "title": "Chinese food – Block A",
+    "ownerName": "--",
+    "lat": "27.61539",
+    "lng": "65.27725",
+    "openingTime": "7am",
+    "closingTime": "10pm",
+    "otherDetatils": "sunday opened"
+  }
+]

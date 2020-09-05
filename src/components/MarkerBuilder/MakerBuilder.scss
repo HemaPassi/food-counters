@@ -1,0 +1,24 @@
+.marker-builder {
+  border: 2px solid red;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 12px;
+  display: block;
+
+  .tooltip {
+    width: 100px;
+    display: block;
+    margin-top: 12px;
+    &.show {
+      display: block;
+      background-color: pink;
+      border: 2px solid gray;
+    }
+    &.hide {
+      display: none;
+      background-color: green;
+      border: 2px solid blue;
+    }
+  }
+}

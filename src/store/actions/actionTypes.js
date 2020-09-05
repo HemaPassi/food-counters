@@ -1,0 +1,5 @@
+export const ADD_FOOD_TRUCK = "ADD_FOOD_TRUCK";
+export const EDIT_FOOD_TRUCK = "EDIT_FOOD_TRUCK";
+export const REMOVE_FOOD_TRUCK = "REMOVE_FOOD_TRUCK";
+export const FETCH_DATA = "FETCH_DATA";
+export const FETCH_DATA_BASE = "FETCH_DATA_BASE";

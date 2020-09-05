@@ -1,0 +1,56 @@
+.layout {
+  display: flex;
+  text-align: center;
+
+  width: 100%;
+
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+
+  .navigation {
+    width: 100%;
+  }
+  .left-panel {
+    width: 50%;
+    display: none;
+
+    ul {
+      padding: 0.3rem;
+      text-align: left;
+      div {
+        background-color: gray;
+        font-size: bold;
+      }
+      span {
+        display: inline-block;
+        padding: 0 5px;
+        min-width: 5rem;
+        max-width: 5.5rem;
+      }
+    }
+    li {
+      list-style-type: none;
+      border: 1px solid green;
+      background-color: #eee;
+      text-align: left;
+      span {
+        min-width: 5rem;
+        max-width: 5.5rem;
+        padding: 0 5px;
+        display: inline-block;
+      }
+    }
+    &.show {
+      display: block;
+    }
+    &.hide {
+      display: none;
+    }
+  }
+  .right-panel {
+    width: 100%;
+    height: 100vh;
+  }
+}

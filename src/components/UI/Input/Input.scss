@@ -1,0 +1,15 @@
+.form-field {
+  display: flex;
+  padding: 0.2rem 1rem;
+  .input {
+    width: 100%;
+    padding: 0.2rem;
+    box-sizing: border-box;
+  }
+  .label {
+    width: 15rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.2rem;
+  }
+}
